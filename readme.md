@@ -62,6 +62,24 @@ so there should be a users table, a messages table, and a users_messages table.
 ---
 
 <details>
+<summary><h2 style="display:inline;">Api Endpoints</h2></summary>
+
+CRUD is available on:
+
+<ul>
+<li>localhost:8080/message</li>
+<li>localhost:8080/user</li>
+</ul>
+
+</details>
+
+---
+
+<br>
+
+---
+
+<details>
 <summary><h2 style="display:inline;">Flyway Migrations</h2></summary>
 
 Flyway is a tool which is used to do DB migrations, it is somewhat flexible and can be used in many different ways.
@@ -73,5 +91,6 @@ flyway manually via a command.
 Migration files can be found in src/main/resources/db/migration (your IDE might show it as db.migration)
 
 </details>
+
 
 ***
