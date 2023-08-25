@@ -11,10 +11,10 @@
 
 This repo exists as a reference for using some basic tools for a Spring Boot Web App, including:
  - Controller/Service/Repository/Model
- - JPA Entities
- - Interceptors/MDC
- - Controller Advice
- - Unit testing with mockito
+ - JPA Entities (Not Yet Implemented)
+ - Interceptors/MDC (Not Yet Implemented)
+ - Controller Advice (Not Yet Implemented)
+ - Unit testing with mockito (Not Yet Implemented)
  - Flyway Migrations
  - Lombok
  - Docker
