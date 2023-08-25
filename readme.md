@@ -84,8 +84,7 @@ CRUD is available on:
 
 Flyway is a tool which is used to do DB migrations, it is somewhat flexible and can be used in many different ways.
 In this project, there is a plugin defined in the pom.xml which specifies a flyway configuration. This plugin allows
-you to use maven to execute the migrations which is helpful locally. The connection info must match the DB configuration
-in the docker compose file. This configuration would not typically be used in a CICD pipeline which would execute
+you to use maven to execute the migrations which is helpful locally. This configuration would not typically be used in a CICD pipeline which would execute
 flyway manually via a command.
 
 Migration files can be found in src/main/resources/db/migration (your IDE might show it as db.migration)
