@@ -1,10 +1,10 @@
 package com.example.basicspringbootexample.messaging.controller;
 
-import java.util.List;
-import java.util.Optional;
-
 import com.example.basicspringbootexample.messaging.model.Message;
 import com.example.basicspringbootexample.messaging.service.MessageService;
+import com.example.basicspringbootexample.messaging.service.MessageVisibilityService;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,10 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageController {
 
   private final MessageService messageService;
+  private final MessageVisibilityService messageVisibilityService;
 
   @Autowired
-  public MessageController(MessageService messageService) {
+  public MessageController(
+      MessageService messageService, MessageVisibilityService messageVisibilityService) {
     this.messageService = messageService;
+    this.messageVisibilityService = messageVisibilityService;
   }
 
   @PostMapping("/message")
@@ -53,5 +56,11 @@ public class MessageController {
   @DeleteMapping("/message/{id}")
   public void deleteMessage(@PathVariable long id) {
     messageService.deleteMessage(id);
+  }
+
+  @PostMapping("/message/{id}/visibility")
+  public void updateMessageVisibility(
+      @PathVariable long id, @RequestBody List<Long> userIds) {
+    messageVisibilityService.addMessageVisibilityToUsers(id, userIds);
   }
 }
