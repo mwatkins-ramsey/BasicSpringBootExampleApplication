@@ -24,4 +24,12 @@ public class User {
     private String lastname;
     private String email;
 
+    public User(String firstName, String lastName) {
+        firstname = firstName;
+        lastname = lastName;
+    }
+
+    public String FullName() {
+        return firstname + " " + lastname;
+    }
 }
