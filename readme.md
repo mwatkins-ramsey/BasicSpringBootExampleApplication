@@ -31,11 +31,11 @@ This repo exists as a reference for using some basic tools for a Spring Boot Web
 <summary><h2 style="display:inline;"> Infrastructure</h2></summary>
 
 This application currently uses just a Spring Boot application and a MySQL DB.
-You should be able to run by first running `docker compose up` and then running the application in your IDE.
+You should be able to run by first running `docker compose up mysql` and then running the application in your IDE.
 
 - MySql on port 33066 (mapped to 3306 of container)
 - docker compose utilizes a volume with this DB, so it will persist DB changes between runs as long as the volume is
-not deleted from your computer. The first time `docker-compose up` is ran, it will spawn the messaging database
+not deleted from your computer. The first time `docker-compose up mysql` is ran, it will spawn the messaging database
 </details>
 
 ---
@@ -85,8 +85,7 @@ CRUD is available on:
 Flyway is a tool which is used to do DB migrations, it is somewhat flexible and can be used in many different ways.
 In this project, there is a plugin defined in the pom.xml which specifies a flyway configuration. This plugin allows
 you to use maven to execute the migrations which is helpful locally. This configuration would not typically be used
-in a CICD pipeline which would execute
-flyway manually via a command.
+in a CICD pipeline which would execute flyway manually via a command.
 
 Migration files can be found in src/main/resources/db/migration (your IDE might show it as db.migration)
 
